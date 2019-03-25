@@ -267,7 +267,7 @@ class Dut(Base):
         elif len(basil_base_classes) > 1:  # found more than 1 base class
             mod_name = splitted_import_name[-1]
             for basil_base_class in basil_base_classes:
-                if mod_name == basil_base_class[0]:  # check for base class name
+                if mod_name.split(".")[-1] == clsmember[0]: # check for base class name
                     cls = basil_base_class[1]
                     break
             if cls is None:
